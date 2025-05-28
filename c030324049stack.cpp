@@ -39,3 +39,10 @@ void Push(ItemType x, Stack *S) {
         ++(S->Count);
     }
 }
+
+void PrintStack(Stack *S) {
+    cout << "Isi stack: ";
+    for (int i = 0; i < S->Count; ++i)
+        cout << S->Item[i] << "";
+    cout << endl;
+}
