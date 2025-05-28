@@ -1,5 +1,5 @@
 #include <iostream>
-using namspace std;
+using namespace std;
 
 #define MAXSTACK 100
 
@@ -23,18 +23,18 @@ int Full(Stack *S){
 }
 
 void Pop(Stack *S, ItemType *x) {
-    if (S->Count==0)
+    if (Empty(S)) {
         cout<<"Stack masih kosong!"<<endl;
-    else {
+    } else {
         --(S->Count);
         *x = S->Item[S->Count];
     }
 }
 
 void Push(ItemType x, Stack *S) {
-    if (S->Count==MAXSTACK)
+    if (Full(S)) {
         cout << "Stack penuh! Data tidak dapat masuk!"<<endl;
-    else {
+    }else {
         S->Item[S->Count]=x;
         ++(S->Count);
     }
